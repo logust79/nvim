@@ -47,8 +47,12 @@ map("n", "<leader>g", ":FzfLua files<CR>")
 -- remap s to r
 map("n", "r", "s")
 
+-- display
+map("n", "<leader>z", [[:let $DISPLAY = trim(system('tmux showenv -s DISPLAY | sed "s/DISPLAY=\"//;s/\";.*//"'))<CR>]])
+
 -- lsp definition / declaration
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+map("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 -- toggleTerm
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }
