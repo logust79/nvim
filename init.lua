@@ -1,0 +1,5 @@
+require("config.lazy")
+require("jing.settings")
+require("jing.maps")
+-- vim.lsp.enable("pyright")
+-- vim.lsp.enable("rust-analyzer")
