@@ -28,7 +28,7 @@ return {
 		}
 
 		-- Add border to the diagnostic popup window
-		local lspconfig = require("lspconfig")
+		--local lspconfig = require("lspconfig")
 		vim.diagnostic.config({
 			virtual_text = {
 				prefix = "■ ", -- Could be '●', '▎', 'x', '■', , 
@@ -36,6 +36,7 @@ return {
 			float = { border = "rounded" },
 		})
 
+		--[[
 		-- Add the border (handlers) to the lua language server
 		lspconfig.lua_ls.setup({
 			handlers = handlers,
@@ -49,5 +50,6 @@ return {
 		lspconfig.pyright.setup({
 			handlers = handlers,
 		})
+        --]]
 	end,
 }
