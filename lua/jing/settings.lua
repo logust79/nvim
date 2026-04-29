@@ -6,7 +6,8 @@ local o = vim.opt
 o.number = true -- Print the line number in front of each line
 o.relativenumber = true -- Show the line number relative to the line with the cursor in front of each line.
 o.clipboard = "unnamedplus" -- uses the clipboard register for all operations except yank.
-o.syntax = "on" -- When this option is set, the syntax with this name is loaded.
+--o.syntax = "on" -- When this option is set, the syntax with this name is loaded.
+vim.g.python_highlight_all = 0
 o.autoindent = true -- Copy indent from current line when starting a new line.
 o.cursorline = true -- Highlight the screen line of the cursor with CursorLine.
 o.expandtab = true -- In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
@@ -25,6 +26,15 @@ o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smag
 o.splitright = true
 o.splitbelow = true -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
-o.undodir = "/home/logust/tmp/neovim" -- Undo history location
+o.undodir = vim.fn.expand("$HOME/tmp/neovim") -- Undo history location
 o.undofile = true -- Undo history persistence
 o.winborder = "rounded"
+o.exrc = true -- Enable project-specific settings
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions" -- For autosession to work better with buffer reload (colorize plugin needs this)
+
+-- nextflow.config using groovy syntax
+vim.filetype.add({
+	filename = {
+		["nextflow.config"] = "groovy",
+	},
+})
