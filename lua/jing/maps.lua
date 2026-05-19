@@ -8,7 +8,8 @@ end
 map("n", "<leader>w", "<CMD>update<CR>")
 
 -- Quit
-map("n", "<leader>q", "<CMD>q<CR>")
+--map("n", "<leader>q", "<CMD>q<CR>")
+vim.keymap.set("n", "<leader>q", ":noautocmd qall!<CR>", { desc = "Force quit without triggering autocmds" })
 
 -- Exit insert mode
 map("i", "jk", "<ESC>")
