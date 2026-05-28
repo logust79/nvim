@@ -7,6 +7,9 @@ end
 -- Save
 map("n", "<leader>w", "<CMD>update<CR>")
 
+-- Sometimes nvim falls over to use ftplugin for python script. Force to use lsp
+map("n", "K", vim.lsp.buf.hover)
+
 -- Quit
 --map("n", "<leader>q", "<CMD>q<CR>")
 vim.keymap.set("n", "<leader>q", ":noautocmd qall!<CR>", { desc = "Force quit without triggering autocmds" })
